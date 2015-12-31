@@ -14,7 +14,7 @@ public class SetupEulerProblems {
     private int iInput = 0;
     private long lInput = 0L;
 
-    public void Problem1() {
+    public void SetupProblem1() {
         System.out.println(" ");
         System.out.println("Problem 1: Multiples of 3 and 5 below:");
         iInput = 10;
@@ -25,7 +25,7 @@ public class SetupEulerProblems {
         System.out.println("           " + iInput + " is " + iResult);
     }
 
-    public void Problem2() {
+    public void SetupProblem2() {
         System.out.println(" ");
         System.out.println("Problem 2: Even Fibonnaci numbers:");
         iInput = 90;
@@ -36,7 +36,7 @@ public class SetupEulerProblems {
         System.out.println("           " + iInput + " is " + iResult);
     }
 
-    public void Problem3() {
+    public void SetupProblem3() {
         System.out.println(" ");
         System.out.println("Problem 3: Largest prime factor is:");
         lInput = 13195L;
@@ -47,7 +47,7 @@ public class SetupEulerProblems {
         System.out.println("           " + lInput + " is " + lResult);
     }
 
-    public void Problem4() {
+    public void SetupProblem4() {
         System.out.println(" ");
         System.out.println("Problem 4: Largest palindrome product is:");
         iInput = 2;
@@ -58,7 +58,7 @@ public class SetupEulerProblems {
         System.out.println("           " + iInput + " is " + iResult);
     }
 
-    public void Problem5() {
+    public void SetupProblem5() {
         System.out.println(" ");
         System.out.println("Problem 5: Smallest multiple is:");
         iInput = 10;
@@ -69,7 +69,7 @@ public class SetupEulerProblems {
         System.out.println("           " + iInput + " is " + lResult);
     }
 
-    public void Problem6() {
+    public void SetupProblem6() {
         System.out.println(" ");
         System.out.println("Problem 6: Sum square difference is:");
         iInput = 10;
@@ -82,7 +82,7 @@ public class SetupEulerProblems {
         System.out.println("           " + iInput + " is " + lResult);
     }
 
-    public void Problem7() {
+    public void SetupProblem7() {
         System.out.println(" ");
         System.out.println("Problem 7: List the prime:");
         iInput = 6;
@@ -93,7 +93,7 @@ public class SetupEulerProblems {
         System.out.println("           " + iInput + " is " + lResult);
     }
 
-    public void Problem8() {
+    public void SetupProblem8() {
         System.out.println(" ");
         System.out.println("Problem 8: Adjacent product:");
         P8 p8 = new P8();
@@ -105,7 +105,7 @@ public class SetupEulerProblems {
         System.out.println("           " + iResult + " adjacent product is " + lResult);
     }
 
-    public void Problem9() {
+    public void SetupProblem9() {
         System.out.println(" ");
         System.out.println("Problem 9: Product Pythagorean triplet:");
         iInput = 12;
@@ -116,7 +116,7 @@ public class SetupEulerProblems {
         System.out.println("           " + iInput + " is " + lResult);
     }
 
-    public void Problem10() {
+    public void SetupProblem10() {
         System.out.println(" ");
         System.out.println("Problem 10: Sum of primes is: ");
         iInput = 10;
@@ -127,16 +127,16 @@ public class SetupEulerProblems {
         System.out.println("            " + iInput + " is " + lResult);
     }
 
-    public void Problem11() {
+    public void SetupProblem11() {
         System.out.println(" ");
         System.out.println("Problem 11: Consecutive product:");
         P11 p11 = new P11();
-        iInput = 4;
+        iInput = 2;
         lResult = s.Problem11(iInput, p11.p11, false);
         System.out.println("            " + iInput + " is " + lResult);
     }
 
-    public void Problem12() {
+    public void SetupProblem12() {
         System.out.println(" ");
         System.out.println("Problem 12: Triangle number:");
         iInput = 5;
@@ -147,7 +147,7 @@ public class SetupEulerProblems {
         System.out.println("            " + iInput + " is " + lResult);
     }
 
-    public void Problem13() {
+    public void SetupProblem13() {
         System.out.println(" ");
         System.out.println("Problem 13: Digit sum of array:");
         P13 p13 = new P13();
@@ -156,7 +156,7 @@ public class SetupEulerProblems {
         System.out.println("            " + iInput + " is " + lResult);
     }
 
-    public void Problem14() {
+    public void SetupProblem14() {
         System.out.println(" ");
         System.out.println("Problem 14: Longest Collatz Number:");
         iInput = 13;
@@ -167,7 +167,7 @@ public class SetupEulerProblems {
         System.out.println("          " + iInput + " is " + lResult);
     }
 
-    public void Problem15() {
+    public void SetupProblem15() {
         System.out.println(" ");
         System.out.println("Problem 15: Lattice paths:");
         iInput = 20;
@@ -175,7 +175,7 @@ public class SetupEulerProblems {
         System.out.println("          " + iInput + " is " + bigInteger);
     }
 
-    public void Problem16() {
+    public void SetupProblem16() {
         System.out.println(" ");
         System.out.println("Problem 16: ");
         iInput = 15;
@@ -187,16 +187,16 @@ public class SetupEulerProblems {
     }
 
     // skipping 17 for now
-    public void Problem17() {
+    public void SetupProblem17() {
     }
 
-    public void Problem18() {
+    public void SetupProblem18() {
     }
 
-    public void Problem19() {
+    public void SetupProblem19() {
     }
 
-    public void Problem20() {
+    public void SetupProblem20() {
     }
 
     //****************************************************************************************
@@ -225,7 +225,7 @@ public class SetupEulerProblems {
         };
     }
 
-    private class P11testing {
+    private class P11 {
         private int[][] p11 = new int[][]{
                 {1, 2, 3, 4, 5},
                 {6, 7, 8, 9, 10},
@@ -234,7 +234,7 @@ public class SetupEulerProblems {
         };
     }
 
-    private class P11 {
+    private class P11b {
         private int[][] p11 = new int[][]{
                 {8, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 8},
                 {49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 04, 56, 62, 00},

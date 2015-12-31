@@ -5,26 +5,26 @@ public class Main {
     public static void main(String[] args) {
         SetupEulerProblems p = new SetupEulerProblems();
 
-//        p.Problem1();
-//        p.Problem2();
-//        p.Problem3();
-//        p.Problem4();
-//        p.Problem5();
-//        p.Problem6();
-//        p.Problem7();
-//        p.Problem8();
-//        p.Problem9();
-//        p.Problem10();
-//        p.Problem11();
-        p.Problem12();
-//        p.Problem13();
-//        p.Problem14();
-//        p.Problem15();
-//        p.Problem16();
-//        p.Problem17();  // skipping 17 for now
-//        p.Problem18();
-//        p.Problem19();
-//        p.Problem20();
+//        p.SetupProblem1();
+//        p.SetupProblem2();
+//        p.SetupProblem3();
+//        p.SetupProblem4();
+//        p.SetupProblem5();
+//        p.SetupProblem6();
+//        p.SetupProblem7();
+//        p.SetupProblem8();
+//        p.SetupProblem9();
+//        p.SetupProblem10();
+//        p.SetupProblem11();
+//        p.SetupProblem12();
+        p.SetupProblem13();
+//        p.SetupProblem14();
+//        p.SetupProblem15();
+//        p.SetupProblem16();
+//        p.SetupProblem17();  // skipping 17 for now
+//        p.SetupProblem18();
+//        p.SetupProblem19();
+//        p.SetupProblem20();
 
         System.out.println(" ");
     }
