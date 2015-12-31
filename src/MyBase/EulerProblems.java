@@ -3,6 +3,7 @@ package MyBase;
 import com.sun.org.apache.xpath.internal.operations.Div;
 
 import javax.swing.plaf.synth.SynthTextAreaUI;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -312,7 +313,7 @@ public class EulerProblems {
             System.out.println("diagonal down max is " + maxProd);
 
         // vertical
-        rowStop = p11.length - range;
+        rowStop = p11.length - range + 1;
         for (int row = 0; row < rowStop; row++) {
             if (debug)
                 System.out.println("vertical " + row);
@@ -337,14 +338,16 @@ public class EulerProblems {
         return maxProd;
     }
 
-    // Highly divisible trianglular number
-    public long Problem12(long max) {
+    // Highly divisible triangular number
+    public long Problem12(long max, boolean debug) {
         long triangle = 0;
         long factorcount = 0;
 
         for (long loop = 1; loop < Long.MAX_VALUE; loop++) {
             // step 1 find the next triangle number
             triangle = triangle + loop;
+            if (debug)
+                System.out.println("loop " + loop + " is triangle " + triangle);
 
             // step 2 determine how many divisors it has
             factorcount = FactorCount(triangle);
@@ -403,14 +406,222 @@ public class EulerProblems {
         return columnSumLong;
     }
 
+    public long Problem14(long n, boolean debug) {
+        long maxCollatz = 0;
+        long currentCollatz = 0;
+
+        for (long c = n; c > 1; c--) {
+            currentCollatz = Collatz(c, debug) + 1;
+//            if (debug) {
+//                System.out.println("Collatz of " + c + " is " + currentCollatz);
+//            }
+            if (currentCollatz > maxCollatz) {
+                maxCollatz = currentCollatz;
+                if (debug)
+                    System.out.println("maxCollatz " + c + " is " + maxCollatz);
+            }
+
+            if (c == 750000 || c == 500000 || c == 250000)
+                System.out.println("breakpoint here");
+        }
+        return maxCollatz;
+    }
+
+    public BigInteger Problem15(int n)
+    {
+        int x = 20;
+        BigInteger res = factorial( 2 * x ).divide(factorial(x).multiply(factorial(x)));
+        return res;
+    }
+
+    public long Problem16(int power) {
+        BigInteger n = BigInteger.ONE;
+        BigInteger two = BigInteger.valueOf(2);
+        String sTemp = "";
+        long num = 0;
+        for (int i = 1; i <= power; i++) {
+            BigInteger tempBI = n.multiply(two);
+            n = tempBI;
+            sTemp = tempBI.toString();
+        }
+        for (int i = 0; i < sTemp.length(); i++){
+            char tempChar = sTemp.charAt(i);
+            int tempInt = Character.getNumericValue(tempChar);
+            num = num + tempInt;
+        }
+        return num;
+    }
+
+    public long Problem18() {
+        Node h = new Node(75);
+
+        h.l = new Node(95);
+        h.r = new Node(64);
+
+        h.l.l = new Node(17);
+        h.l.r = new Node(47);
+        h.r.r = new Node(82);
+
+        h.l.l.l = new Node(18);
+        h.l.l.r = new Node(35);
+        h.l.r.r = new Node(87);
+        h.r.r.r = new Node(10);
+
+        h.l.l.l.l = new Node(20);
+        h.l.l.l.r = new Node(4);
+        h.l.l.r.r = new Node(82);
+        h.l.r.r.r = new Node(47);
+        h.r.r.r.r = new Node(65);
+
+        h.l.l.l.l.l = new Node(19);
+        h.l.l.l.l.r = new Node(1);
+        h.l.l.l.r.r = new Node(23);
+        h.l.l.r.r.r = new Node(75);
+        h.l.r.r.r.r = new Node(3);
+        h.r.r.r.r.r = new Node(34);
+
+        h.l.l.l.l.l.l = new Node(88);
+        h.l.l.l.l.l.r = new Node(2);
+        h.l.l.l.l.r.r = new Node(77);
+        h.l.l.l.r.r.r = new Node(73);
+        h.l.l.r.r.r.r = new Node(7);
+        h.l.r.r.r.r.r = new Node(63);
+
+        h.l.l.l.l.l.l.l = new Node(99);
+        h.l.l.l.l.l.l.r = new Node(65);
+        h.l.l.l.l.l.r.r = new Node(4);
+        h.l.l.l.l.r.r.r = new Node(28);
+        h.l.l.l.r.r.r.r = new Node(6);
+        h.l.l.r.r.r.r.r = new Node(16);
+        h.l.r.r.r.r.r.r = new Node(70);
+        h.r.r.r.r.r.r.r = new Node(92);
+
+        h.l.l.l.l.l.l.l.l = new Node(41);
+        h.l.l.l.l.l.l.l.r = new Node(41);
+        h.l.l.l.l.l.l.r.r = new Node(26);
+        h.l.l.l.l.l.r.r.r = new Node(56);
+        h.l.l.l.l.r.r.r.r = new Node(83);
+        h.l.l.l.r.r.r.r.r = new Node(40);
+        h.l.l.r.r.r.r.r.r = new Node(80);
+        h.l.r.r.r.r.r.r.r = new Node(70);
+        h.r.r.r.r.r.r.r.r = new Node(33);
+
+        h.l.l.l.l.l.l.l.l.l = new Node(41);
+        h.l.l.l.l.l.l.l.l.r = new Node(48);
+        h.l.l.l.l.l.l.l.r.r = new Node(72);
+        h.l.l.l.l.l.l.r.r.r = new Node(33);
+        h.l.l.l.l.l.r.r.r.r = new Node(47);
+        h.l.l.l.l.r.r.r.r.r = new Node(32);
+        h.l.l.l.r.r.r.r.r.r = new Node(37);
+        h.l.l.r.r.r.r.r.r.r = new Node(16);
+        h.l.r.r.r.r.r.r.r.r = new Node(94);
+        h.r.r.r.r.r.r.r.r.r = new Node(29);
+
+        h.l.l.l.l.l.l.l.l.l.l = new Node(53);
+        h.l.l.l.l.l.l.l.l.l.r = new Node(71);
+        h.l.l.l.l.l.l.l.l.r.r = new Node(44);
+        h.l.l.l.l.l.l.l.r.r.r = new Node(65);
+        h.l.l.l.l.l.l.r.r.r.r = new Node(25);
+        h.l.l.l.l.l.r.r.r.r.r = new Node(43);
+        h.l.l.l.l.r.r.r.r.r.r = new Node(91);
+        h.l.l.l.r.r.r.r.r.r.r = new Node(52);
+        h.l.l.r.r.r.r.r.r.r.r = new Node(97);
+        h.l.r.r.r.r.r.r.r.r.r = new Node(51);
+        h.r.r.r.r.r.r.r.r.r.r = new Node(14);
+
+        h.l.l.l.l.l.l.l.l.l.l.l = new Node(70);
+        h.l.l.l.l.l.l.l.l.l.l.r = new Node(11);
+        h.l.l.l.l.l.l.l.l.l.r.r = new Node(33);
+        h.l.l.l.l.l.l.l.l.r.r.r = new Node(28);
+        h.l.l.l.l.l.l.l.r.r.r.r = new Node(77);
+        h.l.l.l.l.l.l.r.r.r.r.r = new Node(73);
+        h.l.l.l.l.l.r.r.r.r.r.r = new Node(17);
+        h.l.l.l.l.r.r.r.r.r.r.r = new Node(78);
+        h.l.l.l.r.r.r.r.r.r.r.r = new Node(39);
+        h.l.l.r.r.r.r.r.r.r.r.r = new Node(68);
+        h.l.r.r.r.r.r.r.r.r.r.r = new Node(17);
+        h.r.r.r.r.r.r.r.r.r.r.r = new Node(57);
+
+        h.l.l.l.l.l.l.l.l.l.l.l.l = new Node(91);
+        h.l.l.l.l.l.l.l.l.l.l.l.r = new Node(71);
+        h.l.l.l.l.l.l.l.l.l.l.r.r = new Node(52);
+        h.l.l.l.l.l.l.l.l.l.r.r.r = new Node(38);
+        h.l.l.l.l.l.l.l.l.r.r.r.r = new Node(17);
+        h.l.l.l.l.l.l.l.r.r.r.r.r = new Node(14);
+        h.l.l.l.l.l.l.r.r.r.r.r.r = new Node(91);
+        h.l.l.l.l.l.r.r.r.r.r.r.r = new Node(43);
+        h.l.l.l.l.r.r.r.r.r.r.r.r = new Node(58);
+        h.l.l.l.r.r.r.r.r.r.r.r.r = new Node(50);
+        h.l.l.r.r.r.r.r.r.r.r.r.r = new Node(27);
+        h.l.r.r.r.r.r.r.r.r.r.r.r = new Node(29);
+        h.r.r.r.r.r.r.r.r.r.r.r.r = new Node(48);
+
+        h.l.l.l.l.l.l.l.l.l.l.l.l.l = new Node(63);
+        h.l.l.l.l.l.l.l.l.l.l.l.l.r = new Node(66);
+        h.l.l.l.l.l.l.l.l.l.l.l.r.r = new Node(4);
+        h.l.l.l.l.l.l.l.l.l.l.r.r.r = new Node(68);
+        h.l.l.l.l.l.l.l.l.l.r.r.r.r = new Node(89);
+        h.l.l.l.l.l.l.l.l.r.r.r.r.r = new Node(53);
+        h.l.l.l.l.l.l.l.r.r.r.r.r.r = new Node(67);
+        h.l.l.l.l.l.l.r.r.r.r.r.r.r = new Node(30);
+        h.l.l.l.l.l.r.r.r.r.r.r.r.r = new Node(73);
+        h.l.l.l.l.r.r.r.r.r.r.r.r.r = new Node(16);
+        h.l.l.l.r.r.r.r.r.r.r.r.r.r = new Node(69);
+        h.l.l.r.r.r.r.r.r.r.r.r.r.r = new Node(87);
+        h.l.r.r.r.r.r.r.r.r.r.r.r.r = new Node(40);
+        h.r.r.r.r.r.r.r.r.r.r.r.r.r = new Node(31);
+
+        h.l.l.l.l.l.l.l.l.l.l.l.l.l.l = new Node(4);
+        h.l.l.l.l.l.l.l.l.l.l.l.l.l.r = new Node(62);
+        h.l.l.l.l.l.l.l.l.l.l.l.l.r.r = new Node(98);
+        h.l.l.l.l.l.l.l.l.l.l.l.r.r.r = new Node(27);
+        h.l.l.l.l.l.l.l.l.l.l.r.r.r.r = new Node(23);
+        h.l.l.l.l.l.l.l.l.l.r.r.r.r.r = new Node(9);
+        h.l.l.l.l.l.l.l.l.r.r.r.r.r.r = new Node(70);
+        h.l.l.l.l.l.l.l.r.r.r.r.r.r.r = new Node(98);
+        h.l.l.l.l.l.l.r.r.r.r.r.r.r.r = new Node(73);
+        h.l.l.l.l.l.r.r.r.r.r.r.r.r.r = new Node(93);
+        h.l.l.l.l.r.r.r.r.r.r.r.r.r.r = new Node(38);
+        h.l.l.l.r.r.r.r.r.r.r.r.r.r.r = new Node(53);
+        h.l.l.r.r.r.r.r.r.r.r.r.r.r.r = new Node(60);
+        h.l.r.r.r.r.r.r.r.r.r.r.r.r.r = new Node(4);
+        h.r.r.r.r.r.r.r.r.r.r.r.r.r.r = new Node(23);
+
+        return 0;
+    }
+
+    //*********************************************************************************
+
+    private BigInteger factorial(int n)
+    {
+        BigInteger ret = BigInteger.ONE;
+        for (int i = 1; i <= n; ++i) ret = ret.multiply(BigInteger.valueOf(i));
+        return ret;
+    }
+
+    private long Collatz(long n, boolean debug) {
+        long count = 0;
+        debug = false;
+        while (n > 1) {
+            if (n % 2 == 0)
+                n = n / 2;
+            else
+                n = (3 * n) + 1;
+            count++;
+            if (debug)
+                System.out.println(count + " is " + n);
+        }
+        return count++;
+    }
 
     private long FactorCount(long n) {
         long result = 0;
         for (long i = 1; i * i <= n; i++) {
             if (n % i == 0) {
                 result += 2;
-                if (n / i == i)
+                if (n / i == i) {
                     result--;
+                }
             }
         }
         return result;

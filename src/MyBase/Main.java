@@ -16,15 +16,15 @@ public class Main {
 //        p.Problem9();
 //        p.Problem10();
 //        p.Problem11();
-//        p.Problem12();
-        p.Problem13();
-        p.Problem14();
-        p.Problem15();
-        p.Problem16();
-        p.Problem17();
-        p.Problem18();
-        p.Problem19();
-        p.Problem20();
+        p.Problem12();
+//        p.Problem13();
+//        p.Problem14();
+//        p.Problem15();
+//        p.Problem16();
+//        p.Problem17();  // skipping 17 for now
+//        p.Problem18();
+//        p.Problem19();
+//        p.Problem20();
 
         System.out.println(" ");
     }

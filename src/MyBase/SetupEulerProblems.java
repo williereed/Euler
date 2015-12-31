@@ -1,5 +1,6 @@
 package MyBase;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -130,19 +131,19 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 11: Consecutive product:");
         P11 p11 = new P11();
-        iResult = 4;
-        lResult = s.Problem11(iResult, p11.p11, false);
-        System.out.println("            " + iResult + " is " + lResult);
+        iInput = 4;
+        lResult = s.Problem11(iInput, p11.p11, false);
+        System.out.println("            " + iInput + " is " + lResult);
     }
 
     public void Problem12() {
         System.out.println(" ");
         System.out.println("Problem 12: Triangle number:");
         iInput = 5;
-        lResult = s.Problem12(iInput);
+        lResult = s.Problem12(iInput, true);
         System.out.println("            " + iInput + " is " + lResult);
         iInput = 500;
-        lResult = s.Problem12(iInput);
+        lResult = s.Problem12(iInput, false);
         System.out.println("            " + iInput + " is " + lResult);
     }
 
@@ -156,14 +157,36 @@ public class SetupEulerProblems {
     }
 
     public void Problem14() {
+        System.out.println(" ");
+        System.out.println("Problem 14: Longest Collatz Number:");
+        iInput = 13;
+        lResult = s.Problem14(iInput, true);
+        System.out.println("          " + iInput + " is " + lResult);
+        iInput = 999999;
+        lResult = s.Problem14(iInput, true);
+        System.out.println("          " + iInput + " is " + lResult);
     }
 
     public void Problem15() {
+        System.out.println(" ");
+        System.out.println("Problem 15: Lattice paths:");
+        iInput = 20;
+        BigInteger bigInteger = s.Problem15(iInput);
+        System.out.println("          " + iInput + " is " + bigInteger);
     }
 
     public void Problem16() {
+        System.out.println(" ");
+        System.out.println("Problem 16: ");
+        iInput = 15;
+        lResult = s.Problem16(iInput);
+        System.out.println("          " + iInput + " is " + lResult);
+        iInput = 1000;
+        lResult = s.Problem16(iInput);
+        System.out.println("          " + iInput + " is " + lResult);
     }
 
+    // skipping 17 for now
     public void Problem17() {
     }
 
@@ -199,6 +222,15 @@ public class SetupEulerProblems {
                 8, 4, 5, 8, 0, 1, 5, 6, 1, 6, 6, 0, 9, 7, 9, 1, 9, 1, 3, 3, 8, 7, 5, 4, 9, 9, 2, 0, 0, 5, 2, 4, 0, 6, 3, 6, 8, 9, 9, 1, 2, 5, 6, 0, 7, 1, 7, 6, 0, 6,
                 0, 5, 8, 8, 6, 1, 1, 6, 4, 6, 7, 1, 0, 9, 4, 0, 5, 0, 7, 7, 5, 4, 1, 0, 0, 2, 2, 5, 6, 9, 8, 3, 1, 5, 5, 2, 0, 0, 0, 5, 5, 9, 3, 5, 7, 2, 9, 7, 2, 5,
                 7, 1, 6, 3, 6, 2, 6, 9, 5, 6, 1, 8, 8, 2, 6, 7, 0, 4, 2, 8, 2, 5, 2, 4, 8, 3, 6, 0, 0, 8, 2, 3, 2, 5, 7, 5, 3, 0, 4, 2, 0, 7, 5, 2, 9, 6, 3, 4, 5, 0,
+        };
+    }
+
+    private class P11testing {
+        private int[][] p11 = new int[][]{
+                {1, 2, 3, 4, 5},
+                {6, 7, 8, 9, 10},
+                {11, 12, 13, 14, 15},
+                {16, 17, 18, 19, 20},
         };
     }
 
