@@ -9,9 +9,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Euler/MyBase/SetupEulerProblems$P8.class" afterPath="$PROJECT_DIR$/out/production/Euler/MyBase/SetupEulerProblems$P8.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Euler/MyBase/SetupEulerProblems.class" afterPath="$PROJECT_DIR$/out/production/Euler/MyBase/SetupEulerProblems.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyBase/EulerProblems.java" afterPath="$PROJECT_DIR$/src/MyBase/EulerProblems.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyBase/Main.java" afterPath="$PROJECT_DIR$/src/MyBase/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyBase/SetupEulerProblems.java" afterPath="$PROJECT_DIR$/src/MyBase/SetupEulerProblems.java" />
     </list>
     <ignored path="Euler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -476,7 +473,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451605218929</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="renaming methods to avoid confusion">
+      <created>1451715121033</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1451715121033</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
