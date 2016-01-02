@@ -232,6 +232,7 @@ public class SetupEulerProblems {
         h.l.l.l.r.r.r = new Node(73);
         h.l.l.r.r.r.r = new Node(7);
         h.l.r.r.r.r.r = new Node(63);
+        h.r.r.r.r.r.r = new Node(67);
         h.l.l.l.l.l.l.l = new Node(99);
         h.l.l.l.l.l.l.r = new Node(65);
         h.l.l.l.l.l.r.r = new Node(4);
