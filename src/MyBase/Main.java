@@ -17,12 +17,12 @@ public class Main {
 //        p.SetupProblem10();
 //        p.SetupProblem11();
 //        p.SetupProblem12();
-        p.SetupProblem13();
+//        p.SetupProblem13();
 //        p.SetupProblem14();
 //        p.SetupProblem15();
 //        p.SetupProblem16();
 //        p.SetupProblem17();  // skipping 17 for now
-//        p.SetupProblem18();
+        p.SetupProblem18();
 //        p.SetupProblem19();
 //        p.SetupProblem20();
 
