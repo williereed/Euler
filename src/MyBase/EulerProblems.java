@@ -453,22 +453,35 @@ public class EulerProblems {
     public long Problem18(Node head, boolean debug) {
         if (head == null)
             return -1;
-        long maxPath = head.v;
-        Node temp = head;
 
-        printInOrder(head, debug);
-        return 0;
+        long returnValue = printInOrder(head, debug, 0);
+        return returnValue;
     }
 
     //*********************************************************************************
 
-    private void printInOrder(Node rt, boolean debug) {
-        if (rt != null) {
-            printInOrder(rt.l, debug);
-            if (debug)
-                System.out.print(rt.v + ", ");
-            printInOrder(rt.r, debug);
+    private long printInOrder(Node rt, boolean debug, long currentPathSum) {
+        if (debug)
+            System.out.print(" at " + rt.v);
+        currentPathSum = currentPathSum + rt.v;
+
+        long leftPathSum = Long.MIN_VALUE;
+        long rightPathSum = Long.MIN_VALUE;
+
+        if (rt.l != null) {
+            leftPathSum = printInOrder(rt.l, debug, currentPathSum);
         }
+        if (rt.r != null) {
+            rightPathSum = printInOrder(rt.l, debug, currentPathSum);
+        }
+
+        if (leftPathSum > rightPathSum && leftPathSum > currentPathSum)
+            return leftPathSum;
+
+        if (rightPathSum > leftPathSum && rightPathSum > currentPathSum)
+            return rightPathSum;
+
+        return currentPathSum;
     }
 
     private BigInteger factorial(int n)
