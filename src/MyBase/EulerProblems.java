@@ -462,7 +462,7 @@ public class EulerProblems {
 
     private long printInOrder(Node rt, boolean debug, long currentPathSum) {
         if (debug)
-            System.out.println(" at " + rt.v);
+            System.out.println(rt.v);
         currentPathSum = currentPathSum + rt.v;
 
         long leftPathSum = Long.MIN_VALUE;
@@ -475,6 +475,7 @@ public class EulerProblems {
             rightPathSum = printInOrder(rt.r, debug, currentPathSum);
         }
 
+        debug = false;
         if (leftPathSum > rightPathSum && leftPathSum > currentPathSum) {
             if (debug)
                 System.out.println("returning LEFT Path Sum " + leftPathSum);
@@ -487,7 +488,8 @@ public class EulerProblems {
             return rightPathSum;
         }
 
-        System.out.println("returning CURRENT Path Sum " + currentPathSum);
+        if (debug)
+            System.out.println("returning CURRENT Path Sum " + currentPathSum);
         return currentPathSum;
     }
 
