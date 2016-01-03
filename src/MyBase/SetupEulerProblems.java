@@ -194,13 +194,17 @@ public class SetupEulerProblems {
         System.out.println("Problem 18: Max path sum I:");
         Node test = new Node(3);
         test.l = new Node(7);
-        test.r = new Node(4);
+        //test.r = new Node(4);
+        test.r = new Node(1);  // temp value for tlsting purposes
         test.l.l = new Node(2);
         test.l.r = new Node(4);
+        test.r.l = test.l.r;
         test.r.r = new Node(6);
         test.l.l.l = new Node(8);
         test.l.l.r = new Node(5);
+        test.l.r.l = test.l.l.r;
         test.l.r.r = new Node(9);
+        test.r.r.l = test.l.r.r;
         test.r.r.r = new Node(3);
         lResult = s.Problem18(test, true);
         System.out.println("          " + lResult);
