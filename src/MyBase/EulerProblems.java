@@ -458,6 +458,26 @@ public class EulerProblems {
         return returnValue;
     }
 
+    public long Problem20(int num) {
+        BigInteger bResult = BigInteger.valueOf(num);
+
+        for (long i = num  - 1; i > 1; i--) {
+            bResult = bResult.multiply(BigInteger.valueOf(i));
+        }
+        String sResult = bResult.toString();
+        long lResult = 0;
+
+        for (int i = 0; i < sResult.length(); i++) {
+            lResult = lResult + Character.getNumericValue(sResult.charAt(i));
+        }
+
+        return lResult;
+    }
+
+    public long Problem22() {
+        return 0;
+    }
+
     //*********************************************************************************
 
     private long printInOrder(Node rt, boolean debug, long currentPathSum) {

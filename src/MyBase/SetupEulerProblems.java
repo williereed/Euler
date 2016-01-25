@@ -214,24 +214,29 @@ public class SetupEulerProblems {
         h.r = new Node(64);
         h.l.l = new Node(17);
         h.l.r = new Node(47);
+        h.r.l = h.l.r;
         h.r.r = new Node(82);
         h.l.l.l = new Node(18);
         h.l.l.r = new Node(35);
+        h.l.r.l = h.l.l.r;
         h.l.r.r = new Node(87);
         h.r.r.r = new Node(10);
         h.l.l.l.l = new Node(20);
         h.l.l.l.r = new Node(4);
+        h.l.l.r.l = h.l.l.l.r;
         h.l.l.r.r = new Node(82);
         h.l.r.r.r = new Node(47);
         h.r.r.r.r = new Node(65);
         h.l.l.l.l.l = new Node(19);
         h.l.l.l.l.r = new Node(1);
+        h.l.l.l.r.l = h.l.l.l.l.r;
         h.l.l.l.r.r = new Node(23);
         h.l.l.r.r.r = new Node(75);
         h.l.r.r.r.r = new Node(3);
         h.r.r.r.r.r = new Node(34);
         h.l.l.l.l.l.l = new Node(88);
         h.l.l.l.l.l.r = new Node(2);
+        h.l.l.l.l.r.l = h.l.l.l.l.l.r;
         h.l.l.l.l.r.r = new Node(77);
         h.l.l.l.r.r.r = new Node(73);
         h.l.l.r.r.r.r = new Node(7);
@@ -239,6 +244,7 @@ public class SetupEulerProblems {
         h.r.r.r.r.r.r = new Node(67);
         h.l.l.l.l.l.l.l = new Node(99);
         h.l.l.l.l.l.l.r = new Node(65);
+        h.l.l.l.l.l.r.l = h.l.l.l.l.l.l.r;
         h.l.l.l.l.l.r.r = new Node(4);
         h.l.l.l.l.r.r.r = new Node(28);
         h.l.l.l.r.r.r.r = new Node(6);
@@ -247,6 +253,7 @@ public class SetupEulerProblems {
         h.r.r.r.r.r.r.r = new Node(92);
         h.l.l.l.l.l.l.l.l = new Node(41);
         h.l.l.l.l.l.l.l.r = new Node(41);
+        h.l.l.l.l.l.l.r.l = h.l.l.l.l.l.l.l.r;
         h.l.l.l.l.l.l.r.r = new Node(26);
         h.l.l.l.l.l.r.r.r = new Node(56);
         h.l.l.l.l.r.r.r.r = new Node(83);
@@ -333,10 +340,20 @@ public class SetupEulerProblems {
         System.out.println("          " + lResult);
     }
 
-    public void SetupProblem19() {
+    public void SetupProblem20() {
+        System.out.println("Problem 20: Factorial Digit Sum:");
+        iInput = 10;
+        lResult = s.Problem20(iInput);
+        System.out.println("          " + iInput + " is " + lResult);
+        iInput = 100;
+        lResult = s.Problem20(iInput);
+        System.out.println("          " + iInput + " is " + lResult);
     }
 
-    public void SetupProblem20() {
+    public void SetupProblem22() {
+        System.out.println("Problem 22: Name Scores:");
+        lResult = s.Problem22();
+        System.out.println("          " + lResult);
     }
 
     //****************************************************************************************

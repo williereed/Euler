@@ -22,10 +22,11 @@ public class Main {
 //        p.SetupProblem15();
 //        p.SetupProblem16();
 //        p.SetupProblem17();  // skipping 17 for now
-        p.SetupProblem18();
-//        p.SetupProblem19();
-//        p.SetupProblem20();
-
+//        p.SetupProblem18();
+//        p.SetupProblem19();  // skipping 19 for now
+        p.SetupProblem20();
+//        p.SetupProblem21();  // skipping 21 for now
+//        p.SetupProblem22();
         System.out.println(" ");
     }
 }
