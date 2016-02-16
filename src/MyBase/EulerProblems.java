@@ -4,6 +4,8 @@ import com.sun.org.apache.xpath.internal.operations.Div;
 
 import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -502,20 +504,41 @@ public class EulerProblems {
         return sum;
     }
 
-    public long Problem22() {
+    public long Problem22() throws IOException {
+
+        for (int i = 1; i <= 100; i++)
+        {
+            SortFile("c:\\", 1000);
+            SortFile("c:\\", 300);
+        }
         return 0;
     }
 
     //*********************************************************************************
 
-    private void SortFile(String fileName, int sortRange)
+    private void SortFile(String fileName, int sortRange) throws IOException
     {
-        Path path = Paths.get(fileName);
-        try (BufferedReader reader = Files.newBufferedReader(path, ENCODING)){
+        Path readpath = Paths.get(fileName);
+        Path writepath = Paths.get("c:\\temp\\file2.txt");
+
+        try {
+            BufferedReader reader = Files.newBufferedReader(readpath, ENCODING);
+            BufferedWriter writer = Files.newBufferedWriter(writepath, ENCODING);
             String line = null;
+
+            // loop by blocks
             while ((line = reader.readLine()) != null) {
-                //process each line in some way
-                log(line);
+                ArrayList<String> lines = new ArrayList<String>();
+
+                // loop on one blockk
+                for (int block = 0; block < sortRange; block++) {
+                    // read data here
+                }
+
+                // sort data here
+                
+                    // write sorted data here
+
             }
         }
 
