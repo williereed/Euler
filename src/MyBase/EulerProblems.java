@@ -474,11 +474,50 @@ public class EulerProblems {
         return lResult;
     }
 
+    public long Problem21(int num) {
+        long[][] sums = new long[num + 1][2];
+        long sum = 0;
+
+        for (int i = 1; i <= num; i++)
+        {
+            sums[i][0] = i;
+            sums[i][1] = ProperDivisorSum(i);
+        }
+        for (int i = 1; i <= num; i++)
+        {
+            long value1 = sums[i][1];
+            if (value1 <= num) {
+                long value2 = sums[(int) value1][1];
+                if (value1 != value2) {
+                    if (sums[(int) value1][1] == i) {
+                        sum = sum + i;
+                    }
+                }
+            }
+        }
+        return sum;
+    }
+
     public long Problem22() {
         return 0;
     }
 
     //*********************************************************************************
+
+    private void SortFile(String fileName, int sortRange)
+    {
+
+    }
+
+    private long ProperDivisorSum(int num) {
+        long sum = 0;
+
+        for (int i = num - 1; i > 0; i--) {
+            if (num % i == 0)
+                sum = sum + i;
+        }
+        return sum;
+    }
 
     private long printInOrder(Node rt, boolean debug, long currentPathSum) {
         if (debug)

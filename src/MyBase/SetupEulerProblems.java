@@ -350,6 +350,14 @@ public class SetupEulerProblems {
         System.out.println("          " + iInput + " is " + lResult);
     }
 
+    public void SetupProblem21() {
+        System.out.println("Problem 21: Amicable Numbers: ");
+        iInput = 10000;
+        lResult = s.Problem21(iInput);
+        System.out.println("          " + iInput + " is " + lResult);
+
+    }
+
     public void SetupProblem22() {
         System.out.println("Problem 22: Name Scores:");
         lResult = s.Problem22();
