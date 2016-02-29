@@ -1,18 +1,15 @@
 package MyBase;
 
-import com.sun.org.apache.xpath.internal.operations.Div;
-
-import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.Arrays;
 
 /**
  * Created by W on 12/12/2015.
@@ -506,46 +503,116 @@ public class EulerProblems {
 
     public long Problem22() {
 
-        for (int i = 1; i <= 100; i++)
+        // The Real Values
+        String fileName = "c:\\temp\\p022_names.txt";
+        int smallSortSize = 300;
+        int largeSortSize = 1000;
+
+        // The Test Values
+        //String fileName = "c:\\temp\\p022_test.txt";
+        //int smallSortSize = 3;
+        //int largeSortSize = 5;
+        boolean fileIsSorted1 = false;
+        boolean fileIsSorted2 = false;
+        String line = "";
+        int lineVal = 0;
+        long GrandSumTotal = 0;
+
+        while (!fileIsSorted1 && !fileIsSorted2)
         {
-            SortFile("c:\\", 1000);
-            SortFile("c:\\", 300);
+            fileIsSorted1 = SortFile(fileName, smallSortSize);
+            fileIsSorted2 = SortFile(fileName, largeSortSize);
         }
-        return 0;
+        try {
+            int lineNumber = 0;
+            Path readpath = Paths.get(fileName);
+            BufferedReader reader = Files.newBufferedReader(readpath);
+            while ((line = reader.readLine()) != null) {
+                lineNumber++;
+                lineVal = 0;
+                for (int i = 0; i < line.length(); i++) {
+                    char c = line.charAt(i);                    // character A is 64
+                    int cValue = Character.valueOf(c) - 64;     // this changes 65 to 1 because A is valued at 1
+                    lineVal = lineVal + cValue;                 // add character value to line total
+                }
+                lineVal = lineVal * lineNumber;                 // multiply the line total by its position in the file
+                GrandSumTotal = GrandSumTotal + lineVal;        // add name total to GrandSumTotal
+            }
+
+        }
+        catch (IOException ex) {}
+
+        return GrandSumTotal;
     }
 
     //*********************************************************************************
 
-    private void SortFile(String fileName, int sortRange)
+    private boolean SortFile(String fileName, int sortRange)
     {
+        String tempName = "c:\\temp\\file2.txt";
         Path readpath = Paths.get(fileName);
-        Path writepath = Paths.get("c:\\temp\\file2.txt");
+        Path writepath = Paths.get(tempName);
+        boolean fileIsSorted = true;
 
         try {
             BufferedReader reader = Files.newBufferedReader(readpath);
             BufferedWriter writer = Files.newBufferedWriter(writepath);
             String line = null;
+            int position = 0;
+            int totalcount = 0;
+            boolean eof = false;
 
-            // loop by blocks
-            while ((line = reader.readLine()) != null) {
-                ArrayList<String> lines = new ArrayList<String>();
+            // outer loop continues to end of file
+            while (!eof) {
+                String[] lines = new String[sortRange];
+                for (int i = 0; i < sortRange; i++)
+                    lines[i] = "ZZZZZZZZZZZZZZZZZ";
 
-                // loop on one blockk
-                for (int block = 0; block < sortRange; block++) {
-                    // read data here
+                position = 0;
+
+                // inner loop handles one block
+                while (position < sortRange) {
+                    line = reader.readLine();
+                    if (line == null) {
+                        eof = true;
+                        break;
+                    }
+                    lines[position] = line;
+                    position++;
+                    totalcount++;
                 }
 
-                // sort data here
+                // now sort the block
+                boolean blockIsSorted = ArrayWasAlreadySorted(lines, position);
+                if (!blockIsSorted)
+                    fileIsSorted = blockIsSorted;
+                Arrays.sort(lines);
 
-                    // write sorted data here
-
+                // and write the block
+                for (int i = 0; i < position; i++) {
+                    writer.write(lines[i] + "\r\n");
+                }
             }
-        }
-        catch (IOException ex)
-        {
+            reader.close();
+            writer.close();
 
+            File originalFile = new File(fileName);
+            originalFile.delete();
+            File tempFile = new File(tempName);
+            tempFile.renameTo(originalFile);
         }
+        catch (IOException ex) {}
 
+        return fileIsSorted;
+    }
+
+    private boolean ArrayWasAlreadySorted(String[] names, int range) {
+        String[] newnames = names.clone();
+        Arrays.sort(newnames);
+        for (int i = 0; i < range; i++)
+            if (newnames[i] != names[i])
+                return false;
+        return true;
     }
 
     private long ProperDivisorSum(int num) {
