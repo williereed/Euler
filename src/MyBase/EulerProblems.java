@@ -504,14 +504,14 @@ public class EulerProblems {
     public long Problem22() {
 
         // The Real Values
-        String fileName = "c:\\temp\\p022_names.txt";
-        int smallSortSize = 300;
-        int largeSortSize = 1000;
+        //String fileName = "c:\\temp\\p022_names.txt";
+        //int smallSortSize = 300;
+        //int largeSortSize = 1000;
 
         // The Test Values
-        //String fileName = "c:\\temp\\p022_test.txt";
-        //int smallSortSize = 3;
-        //int largeSortSize = 5;
+        String fileName = "c:\\temp\\p022_test.txt";
+        int smallSortSize = 3;
+        int largeSortSize = 5;
         boolean fileIsSorted1 = false;
         boolean fileIsSorted2 = false;
         String line = "";
