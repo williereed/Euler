@@ -522,8 +522,8 @@ public class EulerProblems {
         Path writepath = Paths.get("c:\\temp\\file2.txt");
 
         try {
-            BufferedReader reader = Files.newBufferedReader(readpath, ENCODING);
-            BufferedWriter writer = Files.newBufferedWriter(writepath, ENCODING);
+            BufferedReader reader = Files.newBufferedReader(readpath);
+            BufferedWriter writer = Files.newBufferedWriter(writepath);
             String line = null;
 
             // loop by blocks
