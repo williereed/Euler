@@ -2,13 +2,12 @@ package MyBase;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by W on 12/26/2015.
  */
 public class SetupEulerProblems {
-    private EulerProblems s = new EulerProblems();
+    private EulerProblems eulerProblems = new EulerProblems();
     private int iResult = 0;
     private long lResult = 0L;
     private int iInput = 0;
@@ -18,10 +17,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 1: Multiples of 3 and 5 below:");
         iInput = 10;
-        iResult = s.Problem1(iInput, false);
+        iResult = eulerProblems.Problem1(iInput, false);
         System.out.println("           " + iInput + " is " + iResult);
         iInput = 1000;
-        iResult = s.Problem1(iInput, false);
+        iResult = eulerProblems.Problem1(iInput, false);
         System.out.println("           " + iInput + " is " + iResult);
     }
 
@@ -29,10 +28,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 2: Even Fibonnaci numbers:");
         iInput = 90;
-        iResult = s.Problem2(iInput, false);
+        iResult = eulerProblems.Problem2(iInput, false);
         System.out.println("           " + iInput + " is " + iResult);
         iInput = 4000000;
-        iResult = s.Problem2(iInput, false);
+        iResult = eulerProblems.Problem2(iInput, false);
         System.out.println("           " + iInput + " is " + iResult);
     }
 
@@ -40,10 +39,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 3: Largest prime factor is:");
         lInput = 13195L;
-        lResult = s.Problem3(lInput, false);
+        lResult = eulerProblems.Problem3(lInput, false);
         System.out.println("           " + lInput + " is " + lResult);
         lInput = 600851475143L;
-        lResult = s.Problem3(lInput, false);
+        lResult = eulerProblems.Problem3(lInput, false);
         System.out.println("           " + lInput + " is " + lResult);
     }
 
@@ -51,10 +50,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 4: Largest palindrome product is:");
         iInput = 2;
-        iResult = s.Problem4(iInput, false);
+        iResult = eulerProblems.Problem4(iInput, false);
         System.out.println("           " + iInput + " is " + iResult);
         iInput = 3;
-        iResult = s.Problem4(iInput, false);
+        iResult = eulerProblems.Problem4(iInput, false);
         System.out.println("           " + iInput + " is " + iResult);
     }
 
@@ -62,10 +61,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 5: Smallest multiple is:");
         iInput = 10;
-        lResult = s.Problem5(iInput, false);
+        lResult = eulerProblems.Problem5(iInput, false);
         System.out.println("           " + iInput + " is " + iResult);
         iInput = 20;
-        lResult = s.Problem5(iInput, false);
+        lResult = eulerProblems.Problem5(iInput, false);
         System.out.println("           " + iInput + " is " + lResult);
     }
 
@@ -73,12 +72,12 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 6: Sum square difference is:");
         iInput = 10;
-        lResult = s.Problem6a(iInput);
-        lResult = s.Problem6b(iInput) - lResult;
+        lResult = eulerProblems.Problem6a(iInput);
+        lResult = eulerProblems.Problem6b(iInput) - lResult;
         System.out.println("           " + iInput + " is " + lResult);
         iInput = 100;
-        lResult = s.Problem6a(iInput);
-        lResult = s.Problem6b(100) - lResult;
+        lResult = eulerProblems.Problem6a(iInput);
+        lResult = eulerProblems.Problem6b(100) - lResult;
         System.out.println("           " + iInput + " is " + lResult);
     }
 
@@ -86,10 +85,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 7: List the prime:");
         iInput = 6;
-        lResult = s.Problem7(iInput);
+        lResult = eulerProblems.Problem7(iInput);
         System.out.println("           " + iInput + " is " + lResult);
         iInput = 10001;
-        lResult = s.Problem7(iInput);
+        lResult = eulerProblems.Problem7(iInput);
         System.out.println("           " + iInput + " is " + lResult);
     }
 
@@ -98,10 +97,10 @@ public class SetupEulerProblems {
         System.out.println("Problem 8: Adjacent product:");
         P8 p8 = new P8();
         iResult = 4;
-        lResult = s.Problem8(iResult, false, p8.p8);
+        lResult = eulerProblems.Problem8(iResult, false, p8.p8);
         System.out.println("           " + iResult + " adjacent product is " + lResult);
         iResult = 13;
-        lResult = s.Problem8(iResult, false, p8.p8);
+        lResult = eulerProblems.Problem8(iResult, false, p8.p8);
         System.out.println("           " + iResult + " adjacent product is " + lResult);
     }
 
@@ -109,10 +108,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 9: Product Pythagorean triplet:");
         iInput = 12;
-        lResult = s.Problem9(iInput);
+        lResult = eulerProblems.Problem9(iInput);
         System.out.println("           " + iInput + " is " + lResult);
         iInput = 1000;
-        lResult = s.Problem9(iInput);
+        lResult = eulerProblems.Problem9(iInput);
         System.out.println("           " + iInput + " is " + lResult);
     }
 
@@ -120,10 +119,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 10: Sum of primes is: ");
         iInput = 10;
-        lResult = s.Problem10(iInput, false);
+        lResult = eulerProblems.Problem10(iInput, false);
         System.out.println("            " + iInput + " is " + lResult);
         iInput = 2000000;
-        lResult = s.Problem10(iInput, false);
+        lResult = eulerProblems.Problem10(iInput, false);
         System.out.println("            " + iInput + " is " + lResult);
     }
 
@@ -132,7 +131,7 @@ public class SetupEulerProblems {
         System.out.println("Problem 11: Consecutive product:");
         P11 p11 = new P11();
         iInput = 2;
-        lResult = s.Problem11(iInput, p11.p11, false);
+        lResult = eulerProblems.Problem11(iInput, p11.p11, false);
         System.out.println("            " + iInput + " is " + lResult);
     }
 
@@ -140,10 +139,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 12: Triangle number:");
         iInput = 5;
-        lResult = s.Problem12(iInput, true);
+        lResult = eulerProblems.Problem12(iInput, true);
         System.out.println("            " + iInput + " is " + lResult);
         iInput = 500;
-        lResult = s.Problem12(iInput, false);
+        lResult = eulerProblems.Problem12(iInput, false);
         System.out.println("            " + iInput + " is " + lResult);
     }
 
@@ -152,7 +151,7 @@ public class SetupEulerProblems {
         System.out.println("Problem 13: Digit sum of array:");
         P13 p13 = new P13();
         iInput = 10;
-        lResult = s.Problem13(iInput, p13.p13, true);
+        lResult = eulerProblems.Problem13(iInput, p13.p13, true);
         System.out.println("            " + iInput + " is " + lResult);
     }
 
@@ -160,10 +159,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 14: Longest Collatz Number:");
         iInput = 13;
-        lResult = s.Problem14(iInput, true);
+        lResult = eulerProblems.Problem14(iInput, true);
         System.out.println("          " + iInput + " is " + lResult);
         iInput = 999999;
-        lResult = s.Problem14(iInput, false);
+        lResult = eulerProblems.Problem14(iInput, false);
         System.out.println("          " + iInput + " is " + lResult);
     }
 
@@ -171,7 +170,7 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 15: Lattice paths:");
         iInput = 20;
-        BigInteger bigInteger = s.Problem15(iInput);
+        BigInteger bigInteger = eulerProblems.Problem15(iInput);
         System.out.println("          " + iInput + " is " + bigInteger);
     }
 
@@ -179,10 +178,10 @@ public class SetupEulerProblems {
         System.out.println(" ");
         System.out.println("Problem 16: ");
         iInput = 15;
-        lResult = s.Problem16(iInput, true);
+        lResult = eulerProblems.Problem16(iInput, true);
         System.out.println("          " + iInput + " is " + lResult);
         iInput = 1000;
-        lResult = s.Problem16(iInput, false);
+        lResult = eulerProblems.Problem16(iInput, false);
         System.out.println("          " + iInput + " is " + lResult);
     }
 
@@ -206,7 +205,7 @@ public class SetupEulerProblems {
         test.l.r.r = new Node(9);
         test.r.r.l = test.l.r.r;
         test.r.r.r = new Node(3);
-        lResult = s.Problem18(test, true);
+        lResult = eulerProblems.Problem18(test, true);
         System.out.println("          " + lResult);
 
         Node h = new Node(75);
@@ -336,31 +335,31 @@ public class SetupEulerProblems {
         h.l.l.r.r.r.r.r.r.r.r.r.r.r.r = new Node(60);
         h.l.r.r.r.r.r.r.r.r.r.r.r.r.r = new Node(4);
         h.r.r.r.r.r.r.r.r.r.r.r.r.r.r = new Node(23);
-        lResult = s.Problem18(h, false);
+        lResult = eulerProblems.Problem18(h, false);
         System.out.println("          " + lResult);
     }
 
     public void SetupProblem20() {
         System.out.println("Problem 20: Factorial Digit Sum:");
         iInput = 10;
-        lResult = s.Problem20(iInput);
+        lResult = eulerProblems.Problem20(iInput);
         System.out.println("          " + iInput + " is " + lResult);
         iInput = 100;
-        lResult = s.Problem20(iInput);
+        lResult = eulerProblems.Problem20(iInput);
         System.out.println("          " + iInput + " is " + lResult);
     }
 
     public void SetupProblem21() {
         System.out.println("Problem 21: Amicable Numbers: ");
         iInput = 10000;
-        lResult = s.Problem21(iInput);
+        lResult = eulerProblems.Problem21(iInput);
         System.out.println("          " + iInput + " is " + lResult);
 
     }
 
     public void SetupProblem22() {
         System.out.println("Problem 22: Name Scores:");
-        lResult = s.Problem22();
+        lResult = eulerProblems.Problem22();
         System.out.println("          " + lResult);
     }
 

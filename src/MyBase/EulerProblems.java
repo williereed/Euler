@@ -504,7 +504,7 @@ public class EulerProblems {
         return sum;
     }
 
-    public long Problem22() throws IOException {
+    public long Problem22() {
 
         for (int i = 1; i <= 100; i++)
         {
@@ -516,7 +516,7 @@ public class EulerProblems {
 
     //*********************************************************************************
 
-    private void SortFile(String fileName, int sortRange) throws IOException
+    private void SortFile(String fileName, int sortRange)
     {
         Path readpath = Paths.get(fileName);
         Path writepath = Paths.get("c:\\temp\\file2.txt");
@@ -536,10 +536,14 @@ public class EulerProblems {
                 }
 
                 // sort data here
-                
+
                     // write sorted data here
 
             }
+        }
+        catch (IOException ex)
+        {
+
         }
 
     }
