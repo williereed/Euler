@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by W on 12/12/2015.
@@ -501,119 +502,6 @@ public class EulerProblems {
         return sum;
     }
 
-    public long Problem22() {
-
-        // The Real Values
-        //String fileName = "c:\\temp\\p022_names.txt";
-        //int smallSortSize = 300;
-        //int largeSortSize = 1000;
-
-        // The Test Values
-        String fileName = "c:\\temp\\p022_test.txt";
-        int smallSortSize = 3;
-        int largeSortSize = 5;
-        boolean fileIsSorted1 = false;
-        boolean fileIsSorted2 = false;
-        String line = "";
-        int lineVal = 0;
-        long GrandSumTotal = 0;
-
-        while (!fileIsSorted1 && !fileIsSorted2)
-        {
-            fileIsSorted1 = SortFile(fileName, smallSortSize);
-            fileIsSorted2 = SortFile(fileName, largeSortSize);
-        }
-        try {
-            int lineNumber = 0;
-            Path readpath = Paths.get(fileName);
-            BufferedReader reader = Files.newBufferedReader(readpath);
-            while ((line = reader.readLine()) != null) {
-                lineNumber++;
-                lineVal = 0;
-                for (int i = 0; i < line.length(); i++) {
-                    char c = line.charAt(i);                    // character A is 64
-                    int cValue = Character.valueOf(c) - 64;     // this changes 65 to 1 because A is valued at 1
-                    lineVal = lineVal + cValue;                 // add character value to line total
-                }
-                lineVal = lineVal * lineNumber;                 // multiply the line total by its position in the file
-                GrandSumTotal = GrandSumTotal + lineVal;        // add name total to GrandSumTotal
-            }
-
-        }
-        catch (IOException ex) {}
-
-        return GrandSumTotal;
-    }
-
-    //*********************************************************************************
-
-    private boolean SortFile(String fileName, int sortRange)
-    {
-        String tempName = "c:\\temp\\file2.txt";
-        Path readpath = Paths.get(fileName);
-        Path writepath = Paths.get(tempName);
-        boolean fileIsSorted = true;
-
-        try {
-            BufferedReader reader = Files.newBufferedReader(readpath);
-            BufferedWriter writer = Files.newBufferedWriter(writepath);
-            String line = null;
-            int position = 0;
-            int totalcount = 0;
-            boolean eof = false;
-
-            // outer loop continues to end of file
-            while (!eof) {
-                String[] lines = new String[sortRange];
-                for (int i = 0; i < sortRange; i++)
-                    lines[i] = "ZZZZZZZZZZZZZZZZZ";
-
-                position = 0;
-
-                // inner loop handles one block
-                while (position < sortRange) {
-                    line = reader.readLine();
-                    if (line == null) {
-                        eof = true;
-                        break;
-                    }
-                    lines[position] = line;
-                    position++;
-                    totalcount++;
-                }
-
-                // now sort the block
-                boolean blockIsSorted = ArrayWasAlreadySorted(lines, position);
-                if (!blockIsSorted)
-                    fileIsSorted = blockIsSorted;
-                Arrays.sort(lines);
-
-                // and write the block
-                for (int i = 0; i < position; i++) {
-                    writer.write(lines[i] + "\r\n");
-                }
-            }
-            reader.close();
-            writer.close();
-
-            File originalFile = new File(fileName);
-            originalFile.delete();
-            File tempFile = new File(tempName);
-            tempFile.renameTo(originalFile);
-        }
-        catch (IOException ex) {}
-
-        return fileIsSorted;
-    }
-
-    private boolean ArrayWasAlreadySorted(String[] names, int range) {
-        String[] newnames = names.clone();
-        Arrays.sort(newnames);
-        for (int i = 0; i < range; i++)
-            if (newnames[i] != names[i])
-                return false;
-        return true;
-    }
 
     private long ProperDivisorSum(int num) {
         long sum = 0;
@@ -656,6 +544,151 @@ public class EulerProblems {
         if (debug)
             System.out.println("returning CURRENT Path Sum " + currentPathSum);
         return currentPathSum;
+    }
+
+    public long Problem22() {
+
+        // The Real Values
+        String fileName = "p022_names.txt";
+        int smallSortSize = 333;
+        int largeSortSize = 1000;
+
+        // The Test Values
+        //String fileName = "p022_test.txt";
+        //int smallSortSize = 3;
+        //int largeSortSize = 5;
+
+        // Checks if small sort size did any work to file
+        boolean fileIsSorted1 = false;
+        boolean fileIsSorted2 = false;
+        // Accepts one line at a time
+        String line = "";
+        // Sum of char values for single line
+        int lineVal = 0;
+        // Accumulated values from all lines we have read
+        long GrandSumTotal = 0;
+
+        // As long as sorting takes place in either small or large
+        // continue calling both sort methods
+        while (!fileIsSorted1 && !fileIsSorted2)
+        {
+            fileIsSorted1 = SortFile(fileName, smallSortSize);
+            fileIsSorted2 = SortFile(fileName, largeSortSize);
+        }
+
+        // The file is now sorted
+        try {
+            // Tracking how far into file we are as we are summing names
+            int lineNumber = 0;
+            // Read File
+            Path readpath = Paths.get(fileName);
+            // Getting a handle to the file
+            BufferedReader reader = Files.newBufferedReader(readpath);
+
+            // While not at end of file
+            while ((line = reader.readLine()) != null) {
+                //debugging print all lines
+                System.out.println(line);
+                // Increment line number. total lines in file
+                lineNumber++;
+                // Reset on each new line
+                lineVal = 0;
+                // Loop through letters in line
+                for (int i = 0; i < line.length(); i++) {
+                    char c = line.charAt(i);                    // character A is 64
+                    int cValue = Character.valueOf(c) - 64;     // this changes 65 to 1 because A is valued at 1
+                    lineVal = lineVal + cValue;                 // add character value to line total
+                }
+                // Sum total lines
+                lineVal = lineVal * lineNumber;// multiply the line total by its position in the file
+                // Track entire file
+                GrandSumTotal = GrandSumTotal + lineVal;        // add name total to GrandSumTotal
+            }
+
+            reader.close();
+
+        }
+        catch (IOException ex) {}
+
+
+        return GrandSumTotal;
+    }
+
+    //*********************************************************************************
+
+    private boolean SortFile(String fileName, int sortRange)
+    {
+        String tempName = "file2.txt";
+        Path readpath = Paths.get(fileName);
+        Path writepath = Paths.get(tempName);
+        boolean fileIsSorted = true;
+
+        try {
+            BufferedReader reader = Files.newBufferedReader(readpath);
+            BufferedWriter writer = Files.newBufferedWriter(writepath);
+            // Value read from input file
+            String line = null;
+            // Where we are within block 1,2,3,1,2,3...
+            int position = 0;
+            // Not Used
+            int totalcount = 0;
+            // Break if you don't have full sort range
+            boolean eof = false;
+
+            // outer loop continues to end of file
+            while (!eof) {
+                // Fills up array with one line from file
+                String[] lines = new String[sortRange];
+                for (int i = 0; i < sortRange; i++)
+                    lines[i] = "ZZZZZZZZZZZZZZZZZ";
+                // Track how far we are within block
+                position = 0;
+
+                // inner loop handles one block
+                while (position < sortRange) {
+                    line = reader.readLine();
+                    if (line == null) {
+                        eof = true;
+                        break;
+                    }
+                    // Read a line save it to array
+                    lines[position] = line;
+                    position++;
+                    totalcount++;
+                }
+
+                // now sort the block
+                boolean blockIsSorted = ArrayWasAlreadySorted(lines, position);
+                if (!blockIsSorted)
+                    fileIsSorted = blockIsSorted;
+                Arrays.sort(lines);
+
+                // and write the block
+                for (int i = 0; i < position; i++) {
+                    writer.write(lines[i] + "\r\n");
+                }
+            }
+            reader.close();
+            writer.close();
+
+            // Delete the original then rename temp to original, so we ahve the latest updated file
+            File originalFile = new File(fileName);
+            originalFile.delete();
+            File tempFile = new File(tempName);
+            tempFile.renameTo(originalFile);
+        }
+        catch (IOException ex) {}
+
+        return fileIsSorted;
+    }
+
+    private boolean ArrayWasAlreadySorted(String[] names, int range) {
+        String[] newnames = names.clone();
+        Arrays.sort(newnames);
+        for (int i = 0; i < range; i++)
+            if (newnames[i] != names[i])
+                return false;
+        return true;
     }
 
     private BigInteger factorial(int n)
