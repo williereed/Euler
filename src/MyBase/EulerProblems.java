@@ -588,7 +588,7 @@ public class EulerProblems {
             // While not at end of file
             while ((line = reader.readLine()) != null) {
                 //debugging print all lines
-                System.out.println(line);
+                //System.out.println(line);
                 // Increment line number. total lines in file
                 lineNumber++;
                 // Reset on each new line
