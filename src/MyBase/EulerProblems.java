@@ -549,15 +549,14 @@ public class EulerProblems {
     public long Problem22() {
 
         // The Real Values
-        String fileName = "p022_names.txt";
+        String fileName = "c:\\temp\\p022_names.txt";
         int smallSortSize = 333;
         int largeSortSize = 1000;
 
         // The Test Values
-        //String fileName = "p022_test.txt";
+        //String fileName = "c:\\temp\\p022_test.txt";
         //int smallSortSize = 3;
         //int largeSortSize = 5;
-
         // Checks if small sort size did any work to file
         boolean fileIsSorted1 = false;
         boolean fileIsSorted2 = false;
@@ -578,7 +577,7 @@ public class EulerProblems {
 
         // The file is now sorted
         try {
-            // Tracking how far into file we are as we are summing names
+            // Tracking how far nto file we are as we are summing names
             int lineNumber = 0;
             // Read File
             Path readpath = Paths.get(fileName);
@@ -587,8 +586,6 @@ public class EulerProblems {
 
             // While not at end of file
             while ((line = reader.readLine()) != null) {
-                //debugging print all lines
-                //System.out.println(line);
                 // Increment line number. total lines in file
                 lineNumber++;
                 // Reset on each new line
@@ -608,7 +605,9 @@ public class EulerProblems {
             reader.close();
 
         }
-        catch (IOException ex) {}
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
 
 
         return GrandSumTotal;
@@ -618,7 +617,7 @@ public class EulerProblems {
 
     private boolean SortFile(String fileName, int sortRange)
     {
-        String tempName = "file2.txt";
+        String tempName = "c:\\temp\\file2.txt";
         Path readpath = Paths.get(fileName);
         Path writepath = Paths.get(tempName);
         boolean fileIsSorted = true;
@@ -677,7 +676,9 @@ public class EulerProblems {
             File tempFile = new File(tempName);
             tempFile.renameTo(originalFile);
         }
-        catch (IOException ex) {}
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
 
         return fileIsSorted;
     }
