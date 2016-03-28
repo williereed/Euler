@@ -26,7 +26,9 @@ public class Main {
 //        setupEulerProblems.SetupProblem19();  // skipping 19 for now
 //        setupEulerProblems.SetupProblem20();
 //        setupEulerProblems.SetupProblem21();
-        setupEulerProblems.SetupProblem22();
+//        setupEulerProblems.SetupProblem22();
+        setupEulerProblems.SetupProblem28();
+
         System.out.println(" ");
     }
 }

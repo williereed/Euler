@@ -363,6 +363,16 @@ public class SetupEulerProblems {
         System.out.println("          " + lResult);
     }
 
+    public void SetupProblem28() {
+        System.out.println("Problem 28: Spiral");
+        iInput = 5;
+        lResult = eulerProblems.Problem28(iInput);
+        System.out.println("          " + iInput + " is " + lResult);
+        iInput = 1001;
+        lResult = eulerProblems.Problem28(iInput);
+        System.out.println("          " + iInput + " is " + lResult);
+
+    }
     //****************************************************************************************
     private class P8 {
         private int[] p8 = new int[]{

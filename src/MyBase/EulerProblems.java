@@ -613,6 +613,23 @@ public class EulerProblems {
         return GrandSumTotal;
     }
 
+    public long Problem28(int size)
+    {
+        long sum = 1;
+        int value = 1;
+        int increment = 2;
+
+        while (increment < size)
+        {
+            for (int i = 0; i < 4; i++) {
+                value = value + increment;
+                sum = sum + value;
+            }
+            increment = increment + 2;
+        }
+        return sum;
+    }
+
     //*********************************************************************************
 
     private boolean SortFile(String fileName, int sortRange)
