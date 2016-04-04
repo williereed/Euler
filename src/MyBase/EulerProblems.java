@@ -366,6 +366,7 @@ public class EulerProblems {
     // Large sum
     public long Problem13(int firstDigitCount, ArrayList<String> p13, boolean debug) {
         int totalRowCount = p13.size();
+        // A predefined set of numbers that we're going to scan
         int digits = p13.get(0).length();
         int currentDigit = digits - 1;
         StringBuilder result = new StringBuilder();
@@ -389,6 +390,7 @@ public class EulerProblems {
 
             finished[currentDigit] = Character.getNumericValue(thisChar.charAt(0));
 
+            // Padding result of a column sum, so the ones, tens, 100's are aligned with the existing number
             while (columnSumString.length() <= currentDigit)
                 columnSumString = "0" + columnSumString;
 
@@ -404,6 +406,7 @@ public class EulerProblems {
             trim++;
 
         columnSumString = "";
+        // Building up the answer (10 digit number) by walking the array left to right
         for (int i = trim; i < trim + firstDigitCount; i++)
             columnSumString = columnSumString + finished[i];
         columnSumLong = Long.parseLong(columnSumString);
