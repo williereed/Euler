@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -636,6 +637,8 @@ public class EulerProblems {
     public long Problem29(int a, int b)
     {
         long p = 0;
+        HashMap hash;
+
         for (int i = 1; i <= a; i++)
         {
             for (int j = 2; j <= b; j++)
