@@ -633,6 +633,19 @@ public class EulerProblems {
         return sum;
     }
 
+    public long Problem29(int a, int b)
+    {
+        long p = 0;
+        for (int i = 1; i <= a; i++)
+        {
+            for (int j = 2; j <= b; j++)
+            {
+                // need math to do power p here
+            }
+        }
+        return 0;
+    }
+
     //*********************************************************************************
 
     private boolean SortFile(String fileName, int sortRange)

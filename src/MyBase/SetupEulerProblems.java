@@ -373,6 +373,15 @@ public class SetupEulerProblems {
         System.out.println("          " + iInput + " is " + lResult);
 
     }
+
+    public void SetupProblem29() {
+        System.out.println("Problem 29: Distinct Powers");
+        iInput = 5;
+        lResult = eulerProblems.Problem29(iInput, iInput);
+        System.out.println("          " + iInput + " is " + lResult);
+
+    }
+
     //****************************************************************************************
     private class P8 {
         private int[] p8 = new int[]{
