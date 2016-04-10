@@ -636,17 +636,21 @@ public class EulerProblems {
 
     public long Problem29(int a, int b)
     {
-        long p = 0;
-        HashMap hash;
+        BigInteger p;
+        HashMap hash = new HashMap();
 
-        for (int i = 1; i <= a; i++)
+        for (int i = 2; i <= a; i++)
         {
+            p = BigInteger.valueOf(i);
             for (int j = 2; j <= b; j++)
             {
-                // need math to do power p here
+                p = p.multiply(BigInteger.valueOf(i));
+                if (!hash.containsKey(p))
+                    hash.put(p, 1);
             }
         }
-        return 0;
+        long size = hash.size();
+        return size;
     }
 
     //*********************************************************************************

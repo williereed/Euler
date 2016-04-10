@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38857d60-58e9-42cc-a49d-f9ef9481a76f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Euler/MyBase/EulerProblems.class" afterPath="$PROJECT_DIR$/out/production/Euler/MyBase/EulerProblems.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Euler/MyBase/Main.class" afterPath="$PROJECT_DIR$/out/production/Euler/MyBase/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyBase/EulerProblems.java" afterPath="$PROJECT_DIR$/src/MyBase/EulerProblems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyBase/SetupEulerProblems.java" afterPath="$PROJECT_DIR$/src/MyBase/SetupEulerProblems.java" />
     </list>
     <ignored path="Euler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/src/MyBase/SetupEulerProblems.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="381" column="0" selection-start-line="381" selection-start-column="0" selection-end-line="381" selection-end-column="0" />
+              <caret line="383" column="69" selection-start-line="383" selection-start-column="69" selection-end-line="383" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#SetupProblem18#0;class#SetupEulerProblems#0" expanded="false" />
@@ -55,8 +54,8 @@
       <file leaf-file-name="EulerProblems.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MyBase/EulerProblems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3176661">
-              <caret line="645" column="8" selection-start-line="645" selection-start-column="8" selection-end-line="645" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.7783133">
+              <caret line="652" column="0" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,8 +84,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/MyBase/Support.java" />
         <option value="$PROJECT_DIR$/src/MyBase/Node.java" />
-        <option value="$PROJECT_DIR$/src/MyBase/SetupEulerProblems.java" />
         <option value="$PROJECT_DIR$/src/MyBase/Main.java" />
+        <option value="$PROJECT_DIR$/src/MyBase/SetupEulerProblems.java" />
         <option value="$PROJECT_DIR$/src/MyBase/EulerProblems.java" />
       </list>
     </option>
@@ -540,7 +539,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460267961998</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Working on Problem 29">
+      <created>1460268362611</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1460268362611</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -562,7 +567,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3131783" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3131783" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -628,7 +633,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="91" />
+      <option name="time" value="95" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1057,10 +1062,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyBase/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MyBase/SetupEulerProblems.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="381" column="0" selection-start-line="381" selection-start-column="0" selection-end-line="381" selection-end-column="0" />
+          <caret line="383" column="69" selection-start-line="383" selection-start-column="69" selection-end-line="383" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#SetupProblem18#0;class#SetupEulerProblems#0" expanded="false" />
@@ -1070,18 +1083,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyBase/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MyBase/EulerProblems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3176661">
-          <caret line="645" column="8" selection-start-line="645" selection-start-column="8" selection-end-line="645" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.7783133">
+          <caret line="652" column="0" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
           <folding />
         </state>
       </provider>

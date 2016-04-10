@@ -379,7 +379,9 @@ public class SetupEulerProblems {
         iInput = 5;
         lResult = eulerProblems.Problem29(iInput, iInput);
         System.out.println("          " + iInput + " is " + lResult);
-
+        iInput = 100;
+        lResult = eulerProblems.Problem29(iInput, iInput);
+        System.out.println("          " + iInput + " is " + lResult);
     }
 
     //****************************************************************************************
