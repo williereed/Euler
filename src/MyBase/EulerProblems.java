@@ -653,7 +653,7 @@ public class EulerProblems {
         return size;
     }
 
-    public long Problem36(int max)
+    public long Problem36(long max)
     {
         long sum = 0;
         boolean numberIsPalandrom = false;
@@ -681,23 +681,24 @@ public class EulerProblems {
 
     private boolean IsBinaryValuePalandrom(long num)
     {
-        long thebinary = convert(num, 2);
-        boolean isBinaryPalandrom = IsPalandrom(Long.toString(thebinary));
+        BigInteger thebinary = convert(num, 2);
+        boolean isBinaryPalandrom = IsPalandrom(thebinary.toString());
         if (isBinaryPalandrom)
             System.out.println("binary is: " + thebinary + " = " + num);
         return isBinaryPalandrom;
     }
 
-    public long convert(long decimal , long base)
+    public BigInteger convert(long decimal , long base)
     {
-        long result = 0;
+        BigInteger result = BigInteger.ZERO;
         long multiplier = 1;
 
         while(decimal > 0)
         {
             long residue = decimal % base;
             decimal     = decimal / base;
-            result      = result + residue * multiplier;
+            BigInteger temp = BigInteger.valueOf(residue * multiplier);
+            result      = result.add(temp);
             multiplier  = multiplier * 10;
         }
 
