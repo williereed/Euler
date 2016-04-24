@@ -658,28 +658,28 @@ public class EulerProblems {
         long sum = 0;
         boolean numberIsPalandrom = false;
         boolean binaryIsPalandrom = false;
-        for (int i = 10; i <= max; i++)
+        for (long i = 10; i <= max; i++)
         {
             numberIsPalandrom = IsNumberPalandrom(i);
             binaryIsPalandrom = IsBinaryValuePalandrom(i);
             if (numberIsPalandrom && binaryIsPalandrom) {
                 sum = sum + i;
-                System.out.println("Both: " + i);
+                System.out.println("Both: " + i + "  Sum: " + sum);
             }
         }
         return sum;
     }
     //*********************************************************************************
 
-    private boolean IsNumberPalandrom(int num)
+    private boolean IsNumberPalandrom(long num)
     {
-        boolean isNumberPalandrom = IsPalandrom(Integer.toString(num));
+        boolean isNumberPalandrom = IsPalandrom(Long.toString(num));
         if (isNumberPalandrom)
             System.out.println("number is:" + num);
         return isNumberPalandrom;
     }
 
-    private boolean IsBinaryValuePalandrom(int num)
+    private boolean IsBinaryValuePalandrom(long num)
     {
         long thebinary = convert(num, 2);
         boolean isBinaryPalandrom = IsPalandrom(Long.toString(thebinary));
@@ -688,14 +688,14 @@ public class EulerProblems {
         return isBinaryPalandrom;
     }
 
-    public int convert(int decimal , int base)
+    public long convert(long decimal , long base)
     {
-        int result = 0;
-        int multiplier = 1;
+        long result = 0;
+        long multiplier = 1;
 
         while(decimal > 0)
         {
-            int residue = decimal % base;
+            long residue = decimal % base;
             decimal     = decimal / base;
             result      = result + residue * multiplier;
             multiplier  = multiplier * 10;
