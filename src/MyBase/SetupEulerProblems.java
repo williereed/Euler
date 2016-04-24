@@ -384,6 +384,17 @@ public class SetupEulerProblems {
         System.out.println("          " + iInput + " is " + lResult);
     }
 
+    public void SetupProblem36()
+    {
+        System.out.println("Problem 36: Double-base Palandromes");
+        //iInput = 585;
+        //lResult = eulerProblems.Problem36(iInput);
+        //System.out.println("          " + iInput + " is " + lResult);
+        iInput = 1000000;
+        lResult = eulerProblems.Problem36(iInput);
+        System.out.println("          " + iInput + " is " + lResult);
+
+    }
     //****************************************************************************************
     private class P8 {
         private int[] p8 = new int[]{

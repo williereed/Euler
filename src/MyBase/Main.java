@@ -28,8 +28,8 @@ public class Main {
 //        setupEulerProblems.SetupProblem21();
 //        setupEulerProblems.SetupProblem22();
 //        setupEulerProblems.SetupProblem28();
-        setupEulerProblems.SetupProblem29();
-
+//        setupEulerProblems.SetupProblem29();
+        setupEulerProblems.SetupProblem36();
         System.out.println(" ");
     }
 }

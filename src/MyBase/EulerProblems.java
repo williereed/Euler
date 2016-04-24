@@ -653,8 +653,57 @@ public class EulerProblems {
         return size;
     }
 
+    public long Problem36(int max)
+    {
+        long sum = 0;
+        boolean numberIsPalandrom = false;
+        boolean binaryIsPalandrom = false;
+        for (int i = 10; i <= max; i++)
+        {
+            numberIsPalandrom = IsNumberPalandrom(i);
+            binaryIsPalandrom = IsBinaryValuePalandrom(i);
+            if (numberIsPalandrom && binaryIsPalandrom) {
+                sum = sum + i;
+                System.out.println("Both: " + i);
+            }
+        }
+        return sum;
+    }
     //*********************************************************************************
 
+    private boolean IsNumberPalandrom(int num)
+    {
+        boolean isNumberPalandrom = IsPalandrom(Integer.toString(num));
+        if (isNumberPalandrom)
+            System.out.println("number is:" + num);
+        return isNumberPalandrom;
+    }
+
+    private boolean IsBinaryValuePalandrom(int num)
+    {
+        long thebinary = convert(num, 2);
+        boolean isBinaryPalandrom = IsPalandrom(Long.toString(thebinary));
+        if (isBinaryPalandrom)
+            System.out.println("binary is: " + thebinary + " = " + num);
+        return isBinaryPalandrom;
+    }
+
+    public int convert(int decimal , int base)
+    {
+        int result = 0;
+        int multiplier = 1;
+
+        while(decimal > 0)
+        {
+            int residue = decimal % base;
+            decimal     = decimal / base;
+            result      = result + residue * multiplier;
+            multiplier  = multiplier * 10;
+        }
+
+        //System.out.println ("binary....." + result);
+        return result;
+    }
     private boolean SortFile(String fileName, int sortRange)
     {
         String tempName = "c:\\temp\\file2.txt";
@@ -773,7 +822,7 @@ public class EulerProblems {
         int left = 0;
         int right = p.length() - 1;
         int mid = p.length() / 2;
-        while (p.charAt(left) == p.charAt(right) && (left <= mid)) {
+        while (p.charAt(left) == p.charAt(right) && (left < mid)) {
             left++;
             right--;
         }
