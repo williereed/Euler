@@ -398,17 +398,17 @@ public class SetupEulerProblems {
     public void SetupProblemMyDateCompare()
     {
         String date1 = "10,22,45";
-        String date2 = "5,5,6";
+        String date2 = "5,5,60";
         String compare = "day";
 
         boolean bResult = eulerProblems.MyDateCompareDate2Larger(date1, date2, compare);
         System.out.println("comparing " + compare + " of " + date1 + " and " + date2 + " is " + bResult);
 
-        compare = "minute";
+        compare = "hour";
         bResult = eulerProblems.MyDateCompareDate2Larger(date1, date2, compare);
         System.out.println("comparing " + compare + " of " + date1 + " and " + date2 + " is " + bResult);
 
-        compare = "second";
+        compare = "minute";
         bResult = eulerProblems.MyDateCompareDate2Larger(date1, date2, compare);
         System.out.println("comparing " + compare + " of " + date1 + " and " + date2 + " is " + bResult);
 
