@@ -1,9 +1,9 @@
 package MyBase;
 
 import java.math.BigInteger;
-import java.sql.Time;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by W on 12/26/2015.
@@ -418,8 +418,9 @@ public class SetupEulerProblems {
 
     public void SetupProblemHasEnoughTimeElapsed() {
         long start = System.currentTimeMillis();
-        long requiredDurationInSeconds = 10;
-        System.out.println("Starting now... the required duration in Seconds to wait is " + requiredDurationInSeconds);
+        long requiredDurationInSeconds = 25;
+        System.out.println("Starting " + LocalDateTime.now());
+        System.out.println("   Wait " + requiredDurationInSeconds + " SECOND(S) from Start");
         boolean hasElapsed = false;
 
         while (!hasElapsed) {
@@ -429,8 +430,20 @@ public class SetupEulerProblems {
             catch (java.lang.InterruptedException ie) {}
 
             hasElapsed = eulerProblems.HasEnoughTimeElapsed(start, requiredDurationInSeconds * 1000);
-            System.out.println(hasElapsed);
         }
+        System.out.println("Time is " + LocalDateTime.now());
+
+        long requiredDurationInMinutes = 1;
+        System.out.println("   Wait " + requiredDurationInMinutes + " MINUTE(S) from Start");
+        hasElapsed = false;
+        while (!hasElapsed) {
+            try {
+                Thread.sleep(1000);
+            }
+            catch (java.lang.InterruptedException ie) {}
+            hasElapsed = eulerProblems.HasEnoughTimeElapsed(start, requiredDurationInMinutes * 60 * 1000);
+        }
+        System.out.println("Time is " + LocalDateTime.now());
 
     }
     //****************************************************************************************
