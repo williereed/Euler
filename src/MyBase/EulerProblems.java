@@ -669,6 +669,78 @@ public class EulerProblems {
         }
         return sum;
     }
+
+    public boolean MyDateCompareDate2Larger(String date1, String date2, String compare)
+    {
+        // perform error checking
+        if (date1.lastIndexOf(",") != date1.lastIndexOf(","))
+        {
+            System.out.println("too few commas in date1");
+            return false;
+        }
+        if (date2.lastIndexOf(",") != date2.lastIndexOf(","))
+        {
+            System.out.println("too few commas in date2");
+            return false;
+        }
+
+        // find value of day in date1
+        int positionOfComma = date1.indexOf(",");
+        String sDay1 = date1.substring(0, positionOfComma);
+        int iDay1 = Integer.parseInt(sDay1);
+
+        // find value of hour in date1
+        int start = positionOfComma + 1;
+        int end = date1.length();
+        String date1NoDay = date1.substring(start, end);
+        positionOfComma = date1NoDay.indexOf(",");
+        String sHour1 = date1NoDay.substring(0, positionOfComma);
+        int iHour1 = Integer.parseInt(sHour1);
+
+        // find value of minute in date1
+        start = positionOfComma + 1;
+        end = date1NoDay.length();
+        String sMinute1 = date1NoDay.substring(start, end);
+        int iMinute1 = Integer.parseInt(sMinute1);
+
+        // find value of day in date1
+        positionOfComma = date2.indexOf(",");
+        String sDay2 = date2.substring(0, positionOfComma);
+        int iDay2 = Integer.parseInt(sDay2);
+
+        // find value of hour in date1
+        start = positionOfComma + 1;
+        end = date2.length();
+        String date2NoDay = date2.substring(start, end);
+        positionOfComma = date2NoDay.indexOf(",");
+        String sHour2 = date2NoDay.substring(0, positionOfComma);
+        int iHour2 = Integer.parseInt(sHour2);
+
+        // find value of minute in date1
+        start = positionOfComma + 1;
+        end = date2NoDay.length();
+        String sMinute2 = date2NoDay.substring(start, end);
+        int iMinute2 = Integer.parseInt(sMinute2);
+
+        compare = compare.toUpperCase();
+
+        switch (compare) {
+            case "DAY":
+                if (iDay2 > iDay1)
+                    return true;
+                break;
+            case "HOUR":
+                if (iHour2 > iHour1)
+                    return true;
+                break;
+            case "MINUTE":
+                if (iMinute2 > iMinute1)
+                    return true;
+                break;
+        }
+        return false;
+    }
+
     //*********************************************************************************
 
     private boolean IsNumberPalandrom(long num)

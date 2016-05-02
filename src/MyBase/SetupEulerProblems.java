@@ -393,8 +393,27 @@ public class SetupEulerProblems {
         lResult = 1000000;
         lResult = eulerProblems.Problem36(lResult);
         System.out.println("          " + iInput + " is " + lResult);
+    }
+
+    public void SetupProblemMyDateCompare()
+    {
+        String date1 = "10,22,45";
+        String date2 = "5,5,6";
+        String compare = "day";
+
+        boolean bResult = eulerProblems.MyDateCompareDate2Larger(date1, date2, compare);
+        System.out.println("comparing " + compare + " of " + date1 + " and " + date2 + " is " + bResult);
+
+        compare = "minute";
+        bResult = eulerProblems.MyDateCompareDate2Larger(date1, date2, compare);
+        System.out.println("comparing " + compare + " of " + date1 + " and " + date2 + " is " + bResult);
+
+        compare = "second";
+        bResult = eulerProblems.MyDateCompareDate2Larger(date1, date2, compare);
+        System.out.println("comparing " + compare + " of " + date1 + " and " + date2 + " is " + bResult);
 
     }
+
     //****************************************************************************************
     private class P8 {
         private int[] p8 = new int[]{

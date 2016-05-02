@@ -29,7 +29,10 @@ public class Main {
 //        setupEulerProblems.SetupProblem22();
 //        setupEulerProblems.SetupProblem28();
 //        setupEulerProblems.SetupProblem29();
-        setupEulerProblems.SetupProblem36();
+//        setupEulerProblems.SetupProblem36();
+
+        setupEulerProblems.SetupProblemMyDateCompare();
+
         System.out.println(" ");
     }
 }
