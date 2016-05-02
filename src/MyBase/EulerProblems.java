@@ -8,8 +8,11 @@ import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
@@ -741,6 +744,14 @@ public class EulerProblems {
         return false;
     }
 
+    public boolean HasEnoughTimeElapsed(long start, long elapsed)
+    {
+        long now = System.currentTimeMillis();
+        if (now > start + elapsed)
+            return true;
+
+        return false;
+    }
     //*********************************************************************************
 
     private boolean IsNumberPalandrom(long num)
@@ -753,24 +764,24 @@ public class EulerProblems {
 
     private boolean IsBinaryValuePalandrom(long num)
     {
-        BigInteger thebinary = convert(num, 2);
-        boolean isBinaryPalandrom = IsPalandrom(thebinary.toString());
+        long thebinary = convert(num, 2);
+        String binstring = String.valueOf(thebinary);
+        boolean isBinaryPalandrom = IsPalandrom(binstring);
         if (isBinaryPalandrom)
             System.out.println("binary is: " + thebinary + " = " + num);
         return isBinaryPalandrom;
     }
 
-    public BigInteger convert(long decimal , long base)
+    public long convert(long decimal , long base)
     {
-        BigInteger result = BigInteger.ZERO;
+        long result = 0;
         long multiplier = 1;
 
         while(decimal > 0)
         {
             long residue = decimal % base;
             decimal     = decimal / base;
-            BigInteger temp = BigInteger.valueOf(residue * multiplier);
-            result      = result.add(temp);
+            result      = result + residue * multiplier;
             multiplier  = multiplier * 10;
         }
 

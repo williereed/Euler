@@ -29,9 +29,9 @@ public class Main {
 //        setupEulerProblems.SetupProblem22();
 //        setupEulerProblems.SetupProblem28();
 //        setupEulerProblems.SetupProblem29();
-//        setupEulerProblems.SetupProblem36();
-
-        setupEulerProblems.SetupProblemMyDateCompare();
+//        setupEulerProblems.SetupProblem36();  // NOT WORKING
+//        setupEulerProblems.SetupProblemMyDateCompare();
+        setupEulerProblems.SetupProblemHasEnoughTimeElapsed();
 
         System.out.println(" ");
     }

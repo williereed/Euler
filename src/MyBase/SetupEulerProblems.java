@@ -1,7 +1,9 @@
 package MyBase;
 
 import java.math.BigInteger;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by W on 12/26/2015.
@@ -414,6 +416,23 @@ public class SetupEulerProblems {
 
     }
 
+    public void SetupProblemHasEnoughTimeElapsed() {
+        long start = System.currentTimeMillis();
+        long requiredDurationInSeconds = 10;
+        System.out.println("Starting now... the required duration in Seconds to wait is " + requiredDurationInSeconds);
+        boolean hasElapsed = false;
+
+        while (!hasElapsed) {
+            try {
+                Thread.sleep(1000);
+            }
+            catch (java.lang.InterruptedException ie) {}
+
+            hasElapsed = eulerProblems.HasEnoughTimeElapsed(start, requiredDurationInSeconds * 1000);
+            System.out.println(hasElapsed);
+        }
+
+    }
     //****************************************************************************************
     private class P8 {
         private int[] p8 = new int[]{
